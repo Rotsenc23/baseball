@@ -1,0 +1,9 @@
+.bs-destacados .card{
+height: 100%;
+}
+
+.bs-destacados .cardimg{
+    height: 200px;
+    object-fit: cover;
+
+}
