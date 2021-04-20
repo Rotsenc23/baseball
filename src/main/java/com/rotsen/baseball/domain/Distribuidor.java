@@ -1,42 +1,45 @@
 package com.rotsen.baseball.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name= "DISTRIBUIDOR")
 public class Distribuidor {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
     private String nombreLiga;
     private String sitioWeb;
 
-    public Integer getId() {
-        return this.id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @Column(name="ID")
+    public int getId() {
+        return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
-
-    public String getNombreLiga() {
-        return this.nombreLiga;
+    @Column(name="NOMBRE_LIGA")
+    public String getNombre() {
+        return nombreLiga;
     }
 
-    public void setNombreLiga(String nombreLiga) {
-        this.nombreLiga = nombreLiga;
+    public void setNombre(String nombre) {
+        this.nombreLiga = nombre;
     }
-
+    @Column(name="SITIO_WEB")
     public String getSitioWeb() {
-        return this.sitioWeb;
+        return sitioWeb;
     }
 
     public void setSitioWeb(String sitioWeb) {
         this.sitioWeb = sitioWeb;
     }
-    
-    
+
 }

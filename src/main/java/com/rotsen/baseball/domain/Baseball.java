@@ -7,26 +7,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 /*
 TODAS LAS CLASES CON @ENTITY INDICA QUE ES UNA TABLA EN LA BASE DE DATOS, BIEN SEA MARIADB O MYSQL
 ESTA ES UNA CLASE CON LOS STANDARES QUE PIDE JPA DE CREACION DE ENTIDADES
-*/
+ */
 @Entity
 @Table(name = "BASEBALL")
 public class Baseball {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
     private String nombreEquipo;
     private String descripcion;
     private String imagenUrl;
-    @ManyToOne
-    private String distribuidor;
+   
 
+  
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    
     
     @Column(name = "ID")
-    @Id
     public Integer getId() {
         return this.id;
     }
@@ -45,7 +46,9 @@ public class Baseball {
     public String getImagenUrl() {
         return this.imagenUrl;
     }
-
+    
+    
+    
     public void setId(Integer id) {
         this.id = id;
     }
@@ -61,5 +64,9 @@ public class Baseball {
     public void setImagenUrl(String imagenUrl) {
         this.imagenUrl = imagenUrl;
     }
+
+  
+    
+    
 
 }
